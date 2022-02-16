@@ -1,7 +1,7 @@
 <?php
 function Photo_upload() {
     $id_user = 64;
-    $id_category = 1;
+    $id_category = $_POST['category'];
     $title = $_POST['title'];
     $description = $_POST['description'];
     $id_status = 1;
@@ -32,11 +32,11 @@ function Photo_upload() {
         /*Если выполнение запроса произошло успешно,
         то уведомить об успехе добавления нового польз-я
         mysqli_query функция для выполенния запросов к БД*/
-        echo json_encode(["status" =>"Photo upload successful"]);
+        echo json_encode(["status" =>"Фото успешно загружено"], JSON_UNESCAPED_UNICODE);
     } else {
         //иначе печатаем ошибку по нашему запросу
         $error = ['status'=>"Error: " . $sql . "<br>".mysqli_error($mysqli)];
-        echo json_encode(["status" =>"Photo upload denied"]);
+        echo json_encode(["status" =>"Фото успешно не загружено"], JSON_UNESCAPED_UNICODE);
         
     }
     mysqli_close($mysqli); //закрываем соедение с БД

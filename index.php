@@ -16,7 +16,7 @@
     <a href="form_register.html">
         Регистрация
     </a>
-    <a href="form_order.html">
+    <a href="form_order.php">
         заявка
     </a>
 </body>

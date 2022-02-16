@@ -13,10 +13,18 @@
         <label>Описание:</label>
         <input type="text-area" name="description"><br>
         <label>Категория:</label>
-        <input list="list" name="category"><br>
-            <datalist id="list">
-                <option value="test">ddd</option>
-            </datalist>
+        <input list="list" name="category" autocomplete="off"><br>
+        <datalist id='list'>
+        <?php 
+            require("con_bd.php");
+            $sql = "SELECT * FROM category";
+            $result = mysqli_query($mysqli, $sql);
+            $dates = mysqli_fetch_all($result);
+            foreach ($dates as $key) {
+                echo "<option value='".$key[0]."'>$key[1]</option>";
+            }
+        ?>
+        </datalist>
         <label>Фото:</label>
         <input type="file" name="photo" multiple>
         <input type="submit" name="submit">
