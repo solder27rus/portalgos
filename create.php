@@ -4,13 +4,12 @@ function Photo_upload() {
     $id_category = 1;
     $title = $_POST['title'];
     $description = $_POST['description'];
+    $id_status = 1;
+    $date = date("Y-m-d H:i:s", time());
 
+    echo $id_category." ".$title." ".$description." ".$date;
     //в name лежит путь к папке с картинками нашего сервера
     $name = "img/".$_FILES["photo"]["name"];
-
-    $link_photo = $name;
-    $id_status = 1;
-    $date = date("Y-m-d");
 
     
     /*move_uploaded_file перемещает загруженную картинку пользователя по
@@ -26,9 +25,9 @@ function Photo_upload() {
     require("con_bd.php");
     $sql = "INSERT INTO task (id_user, id_category, name,
                             description, link_photo, date, id_status)
-    VALUES (64, 3, 'Tect', 
-            'stae', '$name', 
-            '2022-01-01', 1)";
+    VALUES ('$id_user', '$id_category', '$title', 
+            '$description', '$name', 
+            '$date', '$id_status')";
     if (mysqli_query($mysqli, $sql)) {
         /*Если выполнение запроса произошло успешно,
         то уведомить об успехе добавления нового польз-я
