@@ -45,8 +45,9 @@
                         ${secondname} ${login} 
                         ${password} ${password_repeat} 
                         ${email} ${checkbox}`);
-            //проверка на кирилицу, пробел и дефис
+            
             function CheckName(name) {
+                //проверка на кирилицу, пробел и дефис
                 if (/^[а-яА-ЯёЁ -]+$/.test(name) == false) {
                     //если ФИО не на кириллице
                     document.getElementById("status")
@@ -55,15 +56,13 @@
                     //иначе содержится только кириллица, пробелы и дефисы
                     document.getElementById("status")
                     .innerHTML = "Ваше ФИО валидное";
+                    return true;
                 }
             }
-            //проверка ФИО
-            CheckName(firstname);
-            CheckName(lastname);
-            CheckName(secondname);
 
-            //проверка email
+            
             function CheckEmail(email){
+                //проверка email
                 if (/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(email) == false) {
                     //если ФИО не на кириллице
                     document.getElementById("status")
@@ -72,34 +71,45 @@
                     //иначе только кириллица
                     document.getElementById("status")
                     .innerHTML = "Ваш email валидный";
+                    return true;
                 }
             }
-            CheckEmail(email);
             
             function CheckPasswords(pas,repas) {
+                //проверка пароля
                 if (pas == repas) {
                     //пароли совпадают
                     document.getElementById("status")
                     .innerHTML = "Пароли совпадают";
+                    return true;
                 } else {
                     //пароли не совпадают
                     document.getElementById("status")
                     .innerHTML = "Пароли не совпадают";
                 }
             }
-            CheckPasswords(password, password_repeat);
+            
             function CheckBox(checkbox) {
                 if (checkbox) {
-                    //пароли совпадают
                     document.getElementById("status")
                     .innerHTML = "Согласие на БПД дано";
+                    return true;
                 } else {
-                    //пароли не совпадают
                     document.getElementById("status")
                     .innerHTML = "Согласие на БПД не дано";
                 }
             }
-            CheckBox(checkbox);
+            
+            if (CheckBox(checkbox) &&
+                CheckPasswords(password, password_repeat) &&
+                CheckEmail(email) &&
+                CheckName(secondname) &&
+                CheckName(lastname) &&
+                CheckName(firstname)
+                )
+            {
+                aaa();
+            }
             async function aaa(){
                 let response = await fetch('requests.php',{
                     body: JSON.stringify({
@@ -109,11 +119,15 @@
                         login,
                         password,
                         email
-                    })
+                    }),
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                    }
                 })
-                console.log(response);
+                console.log(await response.json());
             }
-            aaa();
         }
     </script>
 </body>

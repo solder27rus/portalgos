@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 14 2022 г., 07:04
+-- Время создания: Фев 15 2022 г., 06:50
 -- Версия сервера: 5.7.19-log
--- Версия PHP: 5.5.38
+-- Версия PHP: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,6 +33,14 @@ CREATE TABLE `category` (
   `name` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'Шиномонтаж'),
+(2, 'Шиномонтаж');
+
 -- --------------------------------------------------------
 
 --
@@ -43,6 +51,14 @@ CREATE TABLE `status` (
   `id` int(11) NOT NULL,
   `name` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `status`
+--
+
+INSERT INTO `status` (`id`, `name`) VALUES
+(1, 'В работе'),
+(2, 'В работе');
 
 -- --------------------------------------------------------
 
@@ -60,6 +76,18 @@ CREATE TABLE `task` (
   `date` timestamp NOT NULL,
   `id_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `task`
+--
+
+INSERT INTO `task` (`id`, `id_user`, `id_category`, `name`, `description`, `link_photo`, `date`, `id_status`) VALUES
+(13, 64, 1, 'ввввв', 'ааааааа', 'photos/Chrysanthemum.jpg', '2022-02-07 14:00:00', 1),
+(14, 64, 1, 'ввввв', 'ааааааа', 'photos/Chrysanthemum.jpg', '2022-02-07 14:00:00', 1),
+(19, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
+(20, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
+(21, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
+(22, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -82,7 +110,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `secondname`, `login`, `password`, `email`) VALUES
-(60, 'Дима', 'Олегович', '- - - - а', 'еппп', 'ппп', '11@11');
+(60, 'Дима', 'Олегович', 'Аделаида', 'еппп', 'ппп', '11@11'),
+(61, 'Соня', 'Виктеева', 'Деревеева', 'sona', '123', 'mail@mail.ail'),
+(63, 'Мать', 'Отец', 'Сын', 'Бог', '', ''),
+(64, '1', '2', '3', '4', '5', '7'),
+(65, '9', '8', '7', '6', '5', '3'),
+(66, 'Дима', 'Виктеева', 'Деревеева', '1', '1', '1'),
+(67, '453', '45', '45', '45', '45', '45'),
+(71, 'Дима', 'Олегович', 'Деревеева', 'sona1', '12', 'mail@mail.ail'),
+(73, 'Дима', 'Олегович', 'Деревеева', '111', '12', 'mail@mail.ail'),
+(78, 'Дима', 'Олегович', '- - - - а', 'одноклассница', '12', 'mail@mail.ail'),
+(79, 'Дима', 'Олегович', 'Деревеева', 'ckieverentineas', '1', 'mail@mail.ail'),
+(88, 'Дима', 'Олегович', 'Деревеева', 'ckieverentineas1', '11', 'mail@mail.ail'),
+(90, 'Соня', 'Виктеева', 'Деревеева', 'fddsss', '1', 'mail@mail.ail');
 
 --
 -- Индексы сохранённых таблиц
@@ -124,22 +164,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

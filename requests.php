@@ -7,7 +7,7 @@
         require("./con_bd.php");
         //сформировали запрос
         $sql = "SELECT login FROM users WHERE
-        login = '".$_POST["login"]."' ";
+        login = '".$login."' ";
         //сохраняем ответ БД в response переменную
         $response = mysqli_query($mysqli, $sql);
         //преобразуем ответ в удобный формат
@@ -21,15 +21,19 @@
         }
     }
     //данные пользователя
-    $firstname = $_POST["firstname"];
-    $lastname = $_POST["lastname"];
-    $secondname = $_POST["secondname"];
-    $login = $_POST["login"];
-    $password = $_POST["password"];
-    $email = $_POST["email"];
-    //формируем sql запрос к базам данных
+    $postData = file_get_contents('php://input');
+    $data = json_decode($postData, true);
+    $firstname = $data['firstname'];
+    $lastname = $data['lastname'];
+    $secondname = $data['secondname'];
+    $login = $data['login'];
+    $password = $data['password'];
+    $email = $data['email'];
+    function CheckName($login1) {
+        return preg_match("/^[a-zA-Z]+$/", $login1);
+    }
     $checked = Check_user();
-    if ($checked != true) {
+    if ($checked == false && CheckName($login) == true) {
         //регистрируем пользователя
         $sql = "INSERT INTO users (firstname, lastname,
                                    secondname, login,
@@ -42,15 +46,16 @@
             /*Если выполнение запроса произошло успешно,
             то уведомить об успехе добавления нового польз-я
             mysqli_query функция для выполенния запросов к БД*/
-            echo " New record created successfully";
+            echo json_encode($data);
         } else {
             //иначе печатаем ошибку по нашему запросу
-            echo "Error: " . $sql . "<br>"
-            .mysqli_error($mysqli);
+            $error = ['status'=>"Error: " . $sql . "<br>".mysqli_error($mysqli)];
+            echo json_encode($error);
+            
         }
         mysqli_close($mysqli); //закрываем соедение с БД
-        echo "Пользователь успешно зарегистрирован";
     } else {
-        echo "Пользователь уже есть";
+        echo json_encode(["status"=>"Не уникально"]);
+        //не зареган
     }
 ?>

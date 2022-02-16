@@ -16,5 +16,8 @@
     <a href="form_register.html">
         Регистрация
     </a>
+    <a href="form_order.html">
+        заявка
+    </a>
 </body>
 </html>
