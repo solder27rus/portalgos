@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 15 2022 г., 06:50
+-- Время создания: Фев 16 2022 г., 04:39
 -- Версия сервера: 5.7.19-log
--- Версия PHP: 7.1.7
+-- Версия PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,7 +39,7 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'Шиномонтаж'),
-(2, 'Шиномонтаж');
+(2, 'Автосервис');
 
 -- --------------------------------------------------------
 
@@ -57,7 +57,7 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`id`, `name`) VALUES
-(1, 'В работе'),
+(1, 'Новая'),
 (2, 'В работе');
 
 -- --------------------------------------------------------
@@ -87,7 +87,18 @@ INSERT INTO `task` (`id`, `id_user`, `id_category`, `name`, `description`, `link
 (19, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
 (20, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
 (21, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
-(22, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1);
+(22, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
+(23, 64, 1, 'Путин', 'купил Пентхаус', 'img/Lighthouse.jpg', '2022-02-15 17:51:41', 1),
+(24, 64, 1, 'Дима', 'купил Пентхаус', 'img/Hydrangeas.jpg', '2022-02-15 18:14:52', 1),
+(25, 64, 2, 'вввв', 'БББ', 'img/Hydrangeas.jpg', '2022-02-15 18:24:04', 1),
+(26, 64, 2, 'вввв', 'БББ', 'img/Hydrangeas.jpg', '2022-02-15 18:33:30', 1),
+(27, 64, 2, 'вввв', 'БББ', 'img/Hydrangeas.jpg', '2022-02-15 18:33:52', 1),
+(28, 64, 2, 'вввв', 'БББ', 'img/Hydrangeas.jpg', '2022-02-15 18:34:45', 1),
+(29, 64, 2, 'вввв', 'БББ', 'img/Hydrangeas.jpg', '2022-02-15 18:35:38', 1),
+(30, 64, 1, 'кк', 'кк', 'img/Hydrangeas.jpg', '2022-02-15 18:35:47', 1),
+(31, 64, 1, 'кк', 'кк', 'img/Hydrangeas.jpg', '2022-02-15 18:36:10', 1),
+(32, 64, 1, 'кк', 'кк', 'img/Hydrangeas.jpg', '2022-02-15 18:37:12', 1),
+(33, 64, 1, 'кк', 'кк', 'img/Hydrangeas.jpg', '2022-02-15 18:37:32', 1);
 
 -- --------------------------------------------------------
 
@@ -174,7 +185,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT для таблицы `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --

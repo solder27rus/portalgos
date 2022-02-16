@@ -19,5 +19,8 @@
     <a href="form_order.php">
         заявка
     </a>
+    <a href="form_tasks.php">
+        Мои заявки
+    </a>
 </body>
 </html>
