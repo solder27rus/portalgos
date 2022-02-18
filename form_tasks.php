@@ -30,7 +30,7 @@
     <div >
     <?php
 
-        if ($_POST["submit"]) {
+        if ($_POST["id"]) {
             $id = $_POST['id'];
             echo $id;
             require("con_bd.php");
@@ -57,9 +57,9 @@
             
             echo "<div id='outer'>";
             echo "<button >Сменить статус заявки</button>";
-            echo '<form method="POST" action="">
+            echo '<form id="form1" method="POST" action="" onsubmit="return confirm(`Удалить?`)">
             <input type="number" name="id" value='.$key[0].' style = "display:none">
-            <input type="submit" name="submit">
+            <input type="submit" value="Удалить">
         </form>';
             echo "<div id='inner'>";
             echo "Название заявки: ".$key[3]."<br>";
@@ -70,10 +70,9 @@
             echo "<img src='".$key[5]."' width='100px'>";
             echo "</div></div></div><hr>";
         }
-        
-        
 
     ?>
+
     </div>
 </body>
 </html>
