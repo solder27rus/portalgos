@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 16 2022 г., 04:39
+-- Время создания: Фев 18 2022 г., 05:48
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 5.5.38
 
@@ -74,31 +74,42 @@ CREATE TABLE `task` (
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `link_photo` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` timestamp NOT NULL,
-  `id_status` int(11) NOT NULL
+  `id_status` int(11) NOT NULL,
+  `link_photo_end` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `task`
 --
 
-INSERT INTO `task` (`id`, `id_user`, `id_category`, `name`, `description`, `link_photo`, `date`, `id_status`) VALUES
-(13, 64, 1, 'ввввв', 'ааааааа', 'photos/Chrysanthemum.jpg', '2022-02-07 14:00:00', 1),
-(14, 64, 1, 'ввввв', 'ааааааа', 'photos/Chrysanthemum.jpg', '2022-02-07 14:00:00', 1),
-(19, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
-(20, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
-(21, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
-(22, 64, 1, 'Tect', 'stae', 'photos/Koala.jpg', '2021-12-31 14:00:00', 1),
-(23, 64, 1, 'Путин', 'купил Пентхаус', 'img/Lighthouse.jpg', '2022-02-15 17:51:41', 1),
-(24, 64, 1, 'Дима', 'купил Пентхаус', 'img/Hydrangeas.jpg', '2022-02-15 18:14:52', 1),
-(25, 64, 2, 'вввв', 'БББ', 'img/Hydrangeas.jpg', '2022-02-15 18:24:04', 1),
-(26, 64, 2, 'вввв', 'БББ', 'img/Hydrangeas.jpg', '2022-02-15 18:33:30', 1),
-(27, 64, 2, 'вввв', 'БББ', 'img/Hydrangeas.jpg', '2022-02-15 18:33:52', 1),
-(28, 64, 2, 'вввв', 'БББ', 'img/Hydrangeas.jpg', '2022-02-15 18:34:45', 1),
-(29, 64, 2, 'вввв', 'БББ', 'img/Hydrangeas.jpg', '2022-02-15 18:35:38', 1),
-(30, 64, 1, 'кк', 'кк', 'img/Hydrangeas.jpg', '2022-02-15 18:35:47', 1),
-(31, 64, 1, 'кк', 'кк', 'img/Hydrangeas.jpg', '2022-02-15 18:36:10', 1),
-(32, 64, 1, 'кк', 'кк', 'img/Hydrangeas.jpg', '2022-02-15 18:37:12', 1),
-(33, 64, 1, 'кк', 'кк', 'img/Hydrangeas.jpg', '2022-02-15 18:37:32', 1);
+INSERT INTO `task` (`id`, `id_user`, `id_category`, `name`, `description`, `link_photo`, `date`, `id_status`, `link_photo_end`) VALUES
+(8, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:19', 1, ''),
+(10, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:22', 1, ''),
+(12, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:22', 1, ''),
+(13, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:22', 1, ''),
+(14, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:23', 1, ''),
+(15, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:23', 1, ''),
+(16, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:23', 1, ''),
+(17, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:23', 1, ''),
+(18, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:24', 1, ''),
+(19, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:24', 1, ''),
+(20, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:24', 1, ''),
+(21, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:24', 1, ''),
+(22, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:24', 1, ''),
+(23, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:25', 1, ''),
+(24, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:25', 1, ''),
+(25, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:25', 1, ''),
+(26, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:25', 1, ''),
+(27, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:26', 1, ''),
+(28, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:26', 1, ''),
+(29, 64, 2, 'Новая заява', 'Хочу Приору', 'img/Jellyfish.jpg', '2022-02-17 17:15:39', 1, ''),
+(30, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:16:39', 1, ''),
+(31, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:16:48', 1, ''),
+(32, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:16:52', 1, ''),
+(33, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:16:53', 1, ''),
+(34, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:16:54', 1, ''),
+(35, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:17:03', 1, ''),
+(36, 64, 1, 'hh', 'dfd', 'img/Lighthouse.jpg', '2022-02-17 18:27:43', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -124,7 +135,7 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `secondname`, `login`, `pass
 (60, 'Дима', 'Олегович', 'Аделаида', 'еппп', 'ппп', '11@11'),
 (61, 'Соня', 'Виктеева', 'Деревеева', 'sona', '123', 'mail@mail.ail'),
 (63, 'Мать', 'Отец', 'Сын', 'Бог', '', ''),
-(64, '1', '2', '3', '4', '5', '7'),
+(64, 'Путин', 'Владимир', 'Владимирович', 'putin', 'voloda', 'putin@rf.ru'),
 (65, '9', '8', '7', '6', '5', '3'),
 (66, 'Дима', 'Виктеева', 'Деревеева', '1', '1', '1'),
 (67, '453', '45', '45', '45', '45', '45'),
@@ -133,7 +144,8 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `secondname`, `login`, `pass
 (78, 'Дима', 'Олегович', '- - - - а', 'одноклассница', '12', 'mail@mail.ail'),
 (79, 'Дима', 'Олегович', 'Деревеева', 'ckieverentineas', '1', 'mail@mail.ail'),
 (88, 'Дима', 'Олегович', 'Деревеева', 'ckieverentineas1', '11', 'mail@mail.ail'),
-(90, 'Соня', 'Виктеева', 'Деревеева', 'fddsss', '1', 'mail@mail.ail');
+(90, 'Соня', 'Виктеева', 'Деревеева', 'fddsss', '1', 'mail@mail.ail'),
+(91, 'Соня', 'Виктеева', 'Деревеева', 'lia', '11', 'mail@mail.ail');
 
 --
 -- Индексы сохранённых таблиц
@@ -185,12 +197,12 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT для таблицы `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
