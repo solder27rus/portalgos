@@ -1,3 +1,6 @@
+<?php
+        session_start();  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,11 +48,14 @@
     <div>
         <div>
             <p>
+                <a href="form_login.html">
+                    | Вход |
+                </a>
                 <a href="form_register.html">
-                    | Регистрация |
+                    Регистрация |
                 </a>
                 <a href="form_order.php">
-                    заявка |
+                    Создать заявку |
                 </a>
                 <a href="form_tasks.php">
                     Мои заявки |
@@ -67,6 +73,9 @@
                     ?>
                 </div>
             </div>
+            <?php
+                Get_User();
+            ?>
     <script>
         async function Reload_Counter(){
             let response = await fetch('reloader.php',{

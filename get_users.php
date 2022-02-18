@@ -1,9 +1,11 @@
 <?php
+    session_start();
     function Get_user() {
         //подключение к базам данных
         require("./con_bd.php");
         //формируем SQL-запрос к БД
-        $sql = "SELECT * FROM users";
+        $sql = "SELECT * FROM users WHERE
+        id = '".$_SESSION['session']."'";
         //Выполняем запрос к БД и сохраняем ответ
         $result = mysqli_query($mysqli, $sql);
         //Преобразуем ответ в формат удобный
