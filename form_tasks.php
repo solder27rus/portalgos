@@ -68,7 +68,7 @@
             echo "Статус заявки: ".$key[18]."<br>";
             echo "Временная метка: ".$key[6]."<br>";
             echo "<img src='".$key[5]."' width='100px'>";
-            echo "</div></div></div><hr>";
+            echo "</div><hr></div></div>";
         }
 
     ?>

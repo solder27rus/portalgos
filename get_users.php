@@ -59,8 +59,8 @@
                 echo "Категория заявки: ".$key[16]."<br>";
                 echo "Статус заявки: ".$key[18]."<br>";
                 echo "Временная метка: ".$key[6]."<br>";
-                echo "<img src='".$key[5]."' width='100px'>";
-                echo "</div></div></div><hr>";
+                echo "<img src='".$key[5]."' width='60%'>";
+                echo "</div></div><hr>";
             }
         } else {
             echo " Пользоватей не найдено ";

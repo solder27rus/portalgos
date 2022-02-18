@@ -6,40 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            display: flex;
-            width: 100%;
+        * {
+            margin: 0;
+            font-size: 30px;
+        }
+        img {
+            margin-top: 15px;
+        }
+        a {
+            text-decoration: none;
+            color:black;
+        }
+        a:hover {
+            color:pink;
         }
         div {
+            display: flex;
             flex-direction: column;
-            background-color: pink;
+            background-color: oldlace;
+            align-items: center;
+            margin: 1px;
+            padding: 35px;
+            border-radius: 15px;
         }
-        @media (max-width: 100%) {
-            * {
-                width: 100%;
-            }
+        div div {
+            background-color: paleturquoise;
+        }
+        div div div div {
+            background-color: azure;
+        }
+        div div div div div {
+            background-color: pink;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body onload="Reload_Counter();">
     <div>
         <div>
-            <a href="form_register.html">
-                | Регистрация |
-            </a>
-            <a href="form_order.php">
-                заявка |
-            </a>
-            <a href="form_tasks.php">
-                Мои заявки |
-            </a><hr>
+            <p>
+                <a href="form_register.html">
+                    | Регистрация |
+                </a>
+                <a href="form_order.php">
+                    заявка |
+                </a>
+                <a href="form_tasks.php">
+                    Мои заявки |
+                </a>
+            </p>
             <div>
                 <div>
                     <?php
-                        echo "Hello Kitty";
+                        echo "Hello Kitty".'<hr>';
                         //require("./requests.php");
                         require("./get_users.php");
-                        echo "Количество решенных предьяв: <label id='status'></label>";
+                        echo "<p>Количество решенных предьяв: <label id='status'></label></p>";
         
                         Get_Tasks();
                     ?>
