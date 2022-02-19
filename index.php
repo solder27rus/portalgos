@@ -60,6 +60,14 @@
                 <a href="form_tasks.php">
                     Мои заявки |
                 </a>
+                <?php 
+                    if(isset($_SESSION['session'])) {
+                        echo 'Добро пожаловать в мою таверну
+                        <form action="exit.php" method="POST">
+                            <input type="submit" name="exit" value="Выйти">
+                        </form>';
+                    }
+                ?>
             </p>
             <div>
                 <div>

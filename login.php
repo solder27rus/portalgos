@@ -14,11 +14,9 @@
     $result = mysqli_query($mysqli, $sql);
     $dates = mysqli_fetch_assoc($result);
     $id = $dates['id'];
-    if (isset($dates)) {
+    if ($id) {
         $_SESSION['session'] = $id;
-        header("Locatin: http://localhost/form_tasks.php");
         echo json_encode(['status'=>true]);
-        exit( );
     } else {
         echo json_encode(['status'=>false]);
     }

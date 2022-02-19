@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 18 2022 г., 05:48
+-- Время создания: Фев 18 2022 г., 07:02
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 5.5.38
 
@@ -83,33 +83,12 @@ CREATE TABLE `task` (
 --
 
 INSERT INTO `task` (`id`, `id_user`, `id_category`, `name`, `description`, `link_photo`, `date`, `id_status`, `link_photo_end`) VALUES
-(8, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:19', 1, ''),
-(10, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:22', 1, ''),
-(12, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:22', 1, ''),
-(13, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:22', 1, ''),
-(14, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:23', 1, ''),
-(15, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:23', 1, ''),
-(16, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:23', 1, ''),
-(17, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:23', 1, ''),
-(18, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:24', 1, ''),
-(19, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:24', 1, ''),
-(20, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:24', 1, ''),
-(21, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:24', 1, ''),
-(22, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:24', 1, ''),
-(23, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:25', 1, ''),
-(24, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:25', 1, ''),
-(25, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:25', 1, ''),
-(26, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:25', 1, ''),
-(27, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:26', 1, ''),
-(28, 64, 1, 'aaa', 'aa', 'img/Chrysanthemum.jpg', '2022-02-17 17:07:26', 1, ''),
-(29, 64, 2, 'Новая заява', 'Хочу Приору', 'img/Jellyfish.jpg', '2022-02-17 17:15:39', 1, ''),
-(30, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:16:39', 1, ''),
-(31, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:16:48', 1, ''),
-(32, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:16:52', 1, ''),
-(33, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:16:53', 1, ''),
-(34, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:16:54', 1, ''),
-(35, 64, 1, 'Ваня', 'Купил Приус', 'img/Desert.jpg', '2022-02-17 18:17:03', 1, ''),
-(36, 64, 1, 'hh', 'dfd', 'img/Lighthouse.jpg', '2022-02-17 18:27:43', 1, NULL);
+(37, 64, 1, 'Геноцид', 'Крыс убивают везде по стране', 'img/Chrysanthemum.jpg', '2022-02-17 19:54:07', 1, NULL),
+(38, 64, 2, 'Пацифизм', 'Никто не хочет идти служить, военком бьет тревогу', 'img/Desert.jpg', '2022-02-17 19:54:38', 1, NULL),
+(39, 64, 1, 'Дальтонизм', 'Люди перестали различать цвета, нужно менять цвета на светофорах', 'img/Hydrangeas.jpg', '2022-02-17 19:55:20', 1, NULL),
+(40, 64, 2, 'Прорвало трубу', 'Унесло десятиэтажку в океан, как жжить?', 'img/Koala.jpg', '2022-02-17 19:56:00', 1, NULL),
+(41, 64, 2, 'Сломал колесо', 'Больно в ноге, почините', 'img/Lighthouse.jpg', '2022-02-17 19:56:39', 1, NULL),
+(42, 64, 1, 'Поехала крыша', 'Заселите на кубяку', 'img/Jellyfish.jpg', '2022-02-17 19:57:03', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -145,7 +124,8 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `secondname`, `login`, `pass
 (79, 'Дима', 'Олегович', 'Деревеева', 'ckieverentineas', '1', 'mail@mail.ail'),
 (88, 'Дима', 'Олегович', 'Деревеева', 'ckieverentineas1', '11', 'mail@mail.ail'),
 (90, 'Соня', 'Виктеева', 'Деревеева', 'fddsss', '1', 'mail@mail.ail'),
-(91, 'Соня', 'Виктеева', 'Деревеева', 'lia', '11', 'mail@mail.ail');
+(91, 'Соня', 'Виктеева', 'Деревеева', 'lia', '11', 'mail@mail.ail'),
+(93, 'Соня', 'Виктеева', 'Деревеева', 'as', '123', 'mail@mail.ail');
 
 --
 -- Индексы сохранённых таблиц
@@ -197,12 +177,12 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT для таблицы `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
