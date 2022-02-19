@@ -33,7 +33,7 @@
         INNER JOIN users on users.id = task.id_user
         INNER JOIN status on status.id = task.id_status
         INNER JOIN category on category.id = task.id_category
-        WHERE task.id_user=64 ORDER BY date DESC LIMIT 4";
+        ORDER BY date DESC LIMIT 4";
         //Преобразуем ответ в формат удобный
         $result = mysqli_query($mysqli, $sql);
         //Преобразуем ответ в формат удобный

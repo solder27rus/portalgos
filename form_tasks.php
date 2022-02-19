@@ -22,6 +22,7 @@
         }
         body {
             display: flex;
+            flex-direction: column;
         }
     </style>
 </head>
@@ -29,7 +30,7 @@
     
     <div >
     <?php
-
+        session_start();
         if ($_POST["id"]) {
             $id = $_POST['id'];
             echo $id;
@@ -45,7 +46,7 @@
         INNER JOIN users on users.id = task.id_user
         INNER JOIN status on status.id = task.id_status
         INNER JOIN category on category.id = task.id_category
-        WHERE task.id_user=64";
+        WHERE task.id_user='".$_SESSION["session"]."'";
         $response = mysqli_query($mysqli, $sql);
         $dates = mysqli_fetch_all($response);
         foreach ($dates as $key) {

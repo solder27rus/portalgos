@@ -1,6 +1,7 @@
 <?php
+session_start();
 function Photo_upload() {
-    $id_user = 64;
+    $id_user = $_SESSION["session"];
     $id_category = $_POST['category'];
     $title = $_POST['title'];
     $description = $_POST['description'];
