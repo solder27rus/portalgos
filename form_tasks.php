@@ -10,7 +10,7 @@
             padding: 10px;
             margin: 10px;
             display: flex;
-            width: 400px;
+            width: 800px;
             background-color: pink;
         }
         #outer {
@@ -31,6 +31,9 @@
     <div >
     <?php
         session_start();
+        if (!$_SESSION['session']) {
+            header('Location: /');
+        }
         if ($_POST["id"]) {
             $id = $_POST['id'];
             echo $id;
@@ -57,7 +60,6 @@
             } */
             
             echo "<div id='outer'>";
-            echo "<button >Сменить статус заявки</button>";
             echo '<form id="form1" method="POST" action="" onsubmit="return confirm(`Удалить?`)">
             <input type="number" name="id" value='.$key[0].' style = "display:none">
             <input type="submit" value="Удалить">
@@ -65,7 +67,22 @@
             echo "<div id='inner'>";
             echo "Название заявки: ".$key[3]."<br>";
             echo "Описание заявки: ".$key[4]."<br>";
-            echo "Категория заявки: ".$key[16]."<br>";
+          
+            echo '<form id="form1" method="POST" action="edit.php" onsubmit="return confirm(`Удалить?`)">
+            <input type="number" name="id" value='.$key[0].' style = "display:none">
+            
+        ';
+            echo      ' Категория заявки: <input list="list" name="category" autocomplete="off" value="'.$key[16].'"><br>
+                <datalist id="list">';
+                    require("con_bd.php");
+                    $sql = "SELECT * FROM category";
+                    $result = mysqli_query($mysqli, $sql);
+                    $dates1 = mysqli_fetch_all($result);
+                    foreach ($dates1 as $key2) {
+                        echo "<option value='".$key2[0]."'>$key2[1]</option>";
+                    }
+        echo'</datalist><input type="submit" value="Сменить категорию">';
+        echo '</form>';
             echo "Статус заявки: ".$key[18]."<br>";
             echo "Временная метка: ".$key[6]."<br>";
             echo "<img src='".$key[5]."' width='100px'>";

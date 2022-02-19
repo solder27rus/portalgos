@@ -50,11 +50,6 @@
                 } */
                 
                 echo "<div id='outer'>";
-                echo "<button >Сменить статус заявки</button>";
-                echo '<form id="form1" method="POST" action="" onsubmit="return confirm(`Удалить?`)">
-                <input type="number" name="id" value='.$key[0].' style = "display:none">
-                <input type="submit" value="Удалить">
-            </form>';
                 echo "<div id='inner'>";
                 echo "Название заявки: ".$key[3]."<br>";
                 echo "Описание заявки: ".$key[4]."<br>";
