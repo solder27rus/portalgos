@@ -23,6 +23,9 @@
         a:hover {
             color:pink;
         }
+        *{
+            transition: 3000ms;
+        }
         div {
             display: flex;
             flex-direction: column;
@@ -31,6 +34,7 @@
             margin: 1px;
             padding: 35px;
             border-radius: 15px;
+            
         }
         div div {
             background-color: paleturquoise;
@@ -45,6 +49,8 @@
     </style>
 </head>
 <body onload="Reload_Counter();">
+<audio id='casino' src="mus/01186.mp3"></audio>
+<audio id='back' src="mus/Kalimba.mp3" autoplay></audio>
     <div>
         <div>
             <p>
@@ -84,6 +90,7 @@
             <?php
                 Get_User();
             ?>
+            <button onclick="Anima();">Анима</button>
     <script>
         async function Reload_Counter(){
             let response = await fetch('reloader.php',{
@@ -93,10 +100,39 @@
                     // 'Content-Type': 'application/x-www-form-urlencoded',
                 }
             });
-            let data = await response.json()
+            let data = await response.json();
+            if (data.status != document.getElementById('status').innerHTML) {
+                sound_play();
+                setTimeout(()=>{document.getElementById('casino').pause()},4000);
+            }
             document.getElementById("status").innerHTML = data.status;
         }
         setInterval(Reload_Counter,5000);
-    </script>
+        function sound_play(){
+            document.getElementById('casino').play()
+        }
+        function Anima() {
+            Sound_Gudizer();
+            setInterval(Anima, 10)
+            for(let i=0; i<100;i++) {
+                setTimeout(()=> {
+                    const test = document.getElementsByTagName('*')[i];
+                    const temp = test.style.background;
+                    test.style.background = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+                    test.style.transform = 'scale(50%)';
+                    setTimeout(()=>{test.style.background = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+                    test.style.transform = 'scale(100%)';},i*3000)
+                }, 1000);
+                
+            }
+        }
+        
+            
+       
+        function Sound_Gudizer() {
+            document.getElementById('back').play();
+        }
+        
+    </script> 
 </body>
 </html>
